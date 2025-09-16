@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Futurista - Victor 17 Anos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        @keyframes neonGlow {
+            0%, 100% { text-shadow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 0 0 30px #00ff9d; }
+            50% { text-shadow: 0 0 5px #00ff9d, 0 0 15px #00ff9d, 0 0 25px #00ff9d; }
+        }
+        @keyframes pixelate {
+            0% { filter: blur(0.5px); }
+            50% { filter: blur(1px); }
+            100% { filter: blur(0.5px); }
+        }
+        body {
+            background-color: #0a0a20;
+            color: #00ff9d;
+            font-family: 'Orbitron', sans-serif;
+            overflow-x: hidden;
+        }
+        .neon-text {
+            animation: neonGlow 2s infinite alternate;
+        }
+        .pixel-effect {
+            animation: pixelate 3s infinite;
+        }
+        .hologram-card {
+            background: linear-gradient(135deg, rgba(0,255,157,0.1) 0%, rgba(0,0,0,0.8) 50%, rgba(0,255,157,0.1) 100%);
+            border: 1px solid #00ff9d;
+            box-shadow: 0 0 20px rgba(0,255,157,0.5);
+            backdrop-filter: blur(5px);
+        }
+        .circuit-bg {
+            background-image: 
+                linear-gradient(to right, rgba(0,255,157,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,255,157,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        #gameCanvas {
+            border: 3px solid #00ff9d;
+            box-shadow: 0 0 30px rgba(0,255,157,0.7);
+        }
+        .avatar-container {
+            border: 3px solid #00ff9d;
+            box-shadow: 0 0 30px rgba(0,255,157,0.7);
+            background: rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="circuit-bg min-h-screen flex flex-col items-center py-10 px-5">
+    <div class="max-w-4xl w-full">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="neon-text text-5xl md:text-7xl font-bold mb-4 font-['Press+Start+2P']">LEVEL UP!</h1>
+            <div class="w-full h-1 bg-gradient-to-r from-transparent via-[#00ff9d] to-transparent my-6"></div>
+            <p class="text-xl md:text-2xl text-[#00ff9d]">Você está convidado para uma celebração épica!</p>
+        </header>
+
+        <!-- Birthday Boy Section -->
+        <section class="hologram-card rounded-xl p-8 mb-12 flex flex-col md:flex-row items-center gap-8">
+            <div class="avatar-container w-48 h-48 rounded-full overflow-hidden pixel-effect md:order-2">
+                <img id="birthdayPhoto" src="img/f53166bd-8ef6-47b2-a31c-1964fa49b9ca.png" alt="Foto do Aniversariante" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left md:order-1">
+                <h2 class="neon-text text-3xl md:text-4xl font-bold mb-2">VICTOR BARRETO EVANGELISTA</h2>
+                <p class="text-2xl mb-4 text-[#00ff9d]">Está completando <br><span class="font-bold">17 ANOS</span>!</p><br>
+                <div class="flex flex-col gap-2">
+                    <p class="flex items-center justify-center md:justify-start gap-2">
+                        <i data-feather="calendar" class="text-[#00ff9d]"></i>
+                        <span class="text-xl">20/09 - Prepare-se para a festa!</span>
+                    </p><br>
+                    <p class="flex items-center justify-center md:justify-start gap-2">
+                        <i data-feather="clock" class="text-[#00ff9d]"></i>
+                        <span class="text-xl"> Às 19:30</span>
+                    </p><br>
+                    <p class="flex items-center justify-center md:justify-start gap-2">
+                        <i data-feather="map-pin" class="text-[#00ff9d]"></i>
+                        <span class="text-xl">Panificadora Atlanta – Recanto das Emas</span>
+                    </p><br>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Map -->
+        <section class="hologram-card rounded-xl p-6 mb-12">
+            <h3 class="neon-text text-2xl md:text-3xl font-bold mb-6 text-center">LOCALIZAÇÃO</h3>
+            <div class="aspect-w-16 aspect-h-9 w-full">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86831.86236877242!2d-48.14272569176617!3d-15.884827118328626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2cdb61275093%3A0xdeb615dfee450dfc!2sPanificadora%20e%20confeitaria%20Atlanta!5e0!3m2!1spt-BR!2sbr!4v1758020412103!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Mini Game Section -->
+        <section class="hologram-card rounded-xl p-8 mb-12">
+            <h3 class="neon-text text-2xl md:text-3xl font-bold mb-6 text-center">MINI-GAME: VICTOR'S FLIGHT</h3>
+            <p class="text-center mb-6 text-lg">Ajude o drone de Victor a desviar dos obstáculos! Use a tecla ESPAÇO para voar.</p>
+            
+            <div class="flex justify-center">
+                <canvas id="gameCanvas" width="300" height="500" class="mx-auto"></canvas>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <p class="text-[#00ff9d] mb-2">Pontuação: <span id="score" class="font-bold">0</span></p>
+                <button id="startGame" class="bg-[#00ff9d] hover:bg-[#00cc7a] text-black font-bold py-2 px-6 rounded-lg transition-all duration-300">
+                    Jogar
+                </button>
+            </div>
+        </section>
+
+    <script>
+        feather.replace();
+        
+        // Mini Game JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+            const startButton = document.getElementById('startGame');
+            const scoreDisplay = document.getElementById('score');
+            
+            let gameRunning = false;
+            let score = 0;
+            
+            // Game variables
+            const player = {
+                x: 50,
+                y: 250,
+                width: 30,
+                height: 30,
+                velocity: 0,
+                gravity: 0.5,
+                jumpStrength: -10
+            };
+            
+            const obstacles = [];
+            let obstacleSpeed = 3;
+            let obstacleGap = 150;
+            let lastObstacleTime = 0;
+            let obstacleInterval = 1500;
+            
+            // Game functions
+            function drawPlayer() {
+                ctx.fillStyle = '#00ff9d';
+                ctx.beginPath();
+                ctx.moveTo(player.x, player.y);
+                ctx.lineTo(player.x + player.width, player.y + player.height/2);
+                ctx.lineTo(player.x, player.y + player.height);
+                ctx.closePath();
+                ctx.fill();
+                
+                // Add some glow
+                ctx.shadowColor = '#00ff9d';
+                ctx.shadowBlur = 10;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+            
+            function drawObstacles() {
+                ctx.fillStyle = '#ff009d';
+                obstacles.forEach(obstacle => {
+                    // Top obstacle
+                    ctx.fillRect(obstacle.x, 0, obstacle.width, obstacle.topHeight);
+                    
+                    // Bottom obstacle
+                    ctx.fillRect(obstacle.x, canvas.height - obstacle.bottomHeight, obstacle.width, obstacle.bottomHeight);
+                    
+                    // Glow effect
+                    ctx.shadowColor = '#ff009d';
+                    ctx.shadowBlur = 10;
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                });
+            }
+            
+            function updatePlayer() {
+                player.velocity += player.gravity;
+                player.y += player.velocity;
+                
+                // Check if player hits the ground or ceiling
+                if (player.y + player.height > canvas.height) {
+                    player.y = canvas.height - player.height;
+                    gameOver();
+                } else if (player.y < 0) {
+                    player.y = 0;
+                    gameOver();
+                }
+            }
+            
+            function updateObstacles() {
+                const currentTime = Date.now();
+                
+                // Add new obstacle
+                if (currentTime - lastObstacleTime > obstacleInterval && obstacles.length < 3) {
+                    const topHeight = Math.floor(Math.random() * (canvas.height - obstacleGap - 100)) + 50;
+                    obstacles.push({
+                        x: canvas.width,
+                        width: 50,
+                        topHeight: topHeight,
+                        bottomHeight: canvas.height - topHeight - obstacleGap,
+                        passed: false
+                    });
+                    lastObstacleTime = currentTime;
+                }
+                
+                // Move and remove obstacles
+                for (let i = obstacles.length - 1; i >= 0; i--) {
+                    obstacles[i].x -= obstacleSpeed;
+                    
+                    // Check if obstacle is passed
+                    if (!obstacles[i].passed && obstacles[i].x + obstacles[i].width < player.x) {
+                        obstacles[i].passed = true;
+                        score++;
+                        scoreDisplay.textContent = score;
+                    }
+                    
+                    // Remove obstacle if off screen
+                    if (obstacles[i].x + obstacles[i].width < 0) {
+                        obstacles.splice(i, 1);
+                    }
+                    
+                    // Check collision
+                    if (
+                        player.x < obstacles[i].x + obstacles[i].width &&
+                        player.x + player.width > obstacles[i].x &&
+                        (player.y < obstacles[i].topHeight || 
+                         player.y + player.height > canvas.height - obstacles[i].bottomHeight)
+                    ) {
+                        gameOver();
+                    }
+                }
+            }
+            
+            function gameOver() {
+                gameRunning = false;
+                startButton.style.display = 'block';
+                alert(`Game Over! Pontuação: ${score}`);
+                score = 0;
+                scoreDisplay.textContent = '0';
+                obstacles.length = 0;
+                player.y = 250;
+                player.velocity = 0;
+            }
+            
+            function gameLoop() {
+                if (!gameRunning) return;
+                
+                // Clear canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Update game state
+                updatePlayer();
+                updateObstacles();
+                
+                // Draw everything
+                drawPlayer();
+                drawObstacles();
+                
+                // Continue the loop
+                requestAnimationFrame(gameLoop);
+            }
+            
+            // Event listeners
+            startButton.addEventListener('click', function() {
+                gameRunning = true;
+                startButton.style.display = 'none';
+                gameLoop();
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' && gameRunning) {
+                    player.velocity = player.jumpStrength;
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
